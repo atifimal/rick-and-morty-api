@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"net.egemsoft.demo.controller"},{"l":"net.egemsoft.demo.model"},{"l":"net.egemsoft.demo.repository"},{"l":"net.egemsoft.demo.service"}]

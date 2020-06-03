@@ -1,0 +1,5 @@
+net.egemsoft.demo
+net.egemsoft.demo.controller
+net.egemsoft.demo.model
+net.egemsoft.demo.repository
+net.egemsoft.demo.service

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Location / Rick & Morty API Web Service - Demo for
+	Egemsoft</title>
+
+<link th:href="@{/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<div style="margin-bottom: 20px;">
+		<a th:href="@{/character}"
+			style="font-size: x-large; text-decoration: none; padding-right:5em">Character</a> <a
+			th:href="@{/episode}"
+			style="font-size: x-large; text-decoration: none; padding-right:5em">Episode</a> <a
+			th:href="@{/location}"
+			style="font-size: x-large; text-decoration: none;">Location</a><br />
+		<br />
+	</div>
+
+
+
+	<div th:if="${numOfPages > 0}" th:each="pageNumber : ${pageNumbers}"
+		class="pagination">
+		<a
+			th:href="(${sortName == 'id'}) ? @{/location(page=${pageNumber})} : @{/location(page=${pageNumber}, sort=${sortName})}">[[${pageNumber}]]</a>
+	</div>
+
+	<table class="rwd-table">
+		<tr>
+			<th align="left">ID</th>
+			<th align="left">Name</th>
+			<th align="left">Type</th>
+			<th align="left">Dimension</th>
+			<th align="left">Residents</th>
+			<th align="left">URL</th>
+			<th align="left">Created</th>
+		</tr>
+		<tr th:each="var: ${pages}">
+			<td th:text="${var.id}"></td>
+			<td th:text="${var.name}"></td>
+			<td th:text="${var.type}"></td>
+			<td th:text="${var.dimension}"></td>
+			<td th:text="${var.residents}"></td>
+			<td><a th:href="@{/location/{id}(id=${var.url})}"
+				style="color: yellow; text-decoration: underline;">Click</a></td>
+			<td th:text="${var.created}"></td>
+		</tr>
+
+	</table>
+</body>
+</html>

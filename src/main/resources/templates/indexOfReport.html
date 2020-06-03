@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Demo for Egemsoft</title>
+
+<link th:href="@{/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<h1>Report</h1>
+
+	<table class="rwd-table">
+		<tr>
+			<th align="left">Endpoint</th>
+			<th align="left">Requested</th>
+		</tr>
+		<tr th:each="var: ${list}">
+			<td th:text="${var.name}"></td>
+			<td th:text="${var.num}"></td>
+		</tr>
+
+	</table>
+</body>
+</html>
